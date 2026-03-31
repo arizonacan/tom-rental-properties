@@ -42,7 +42,7 @@ export default function Home() {
             {/* Right Column: The Paragraph */}
             <div className="flex-1 flex justify-start md:justify-end">
               <p className="max-w-sm font-sans text-base md:text-lg text-woodhouse-cream/90 leading-relaxed text-left">
-                Contemporary yet mid-century design, with high-quality features and a laid-back feel. Located in the heart of the Catskills.
+                Nestled in the heart of Upstate New York, Tom's Rentals offers a collection of three distinct properties, each designed to provide a quiet luxury experience.
               </p>
             </div>
 

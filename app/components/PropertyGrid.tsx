@@ -1,9 +1,10 @@
+import Image from "next/image";
 const properties = [
   {
     name: "The Historic Jesse Buel House",
     price: "$250 / night",
     specs: "4 Bed / 3.5 Bath",
-    label: "The epicenter of Upstate!",
+    label: "The epicenter of Upstate",
     palette: "from-woodhouse-forest via-woodhouse-rustic/70 to-woodhouse-olive/60",
   },
   {
@@ -17,7 +18,7 @@ const properties = [
     name: "Moonrise Rest",
     price: "$295 / night",
     specs: "2 Bed / 2 Bath",
-    label: "A Historic Mohawk Valley Retreat",
+    label: "Historic Mohawk Valley Retreat",
     palette: "from-woodhouse-rustic via-woodhouse-charcoal to-woodhouse-forest",
   },
 ];
@@ -35,7 +36,7 @@ export function PropertyGrid() {
           </h2>
           <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-woodhouse-charcoal/75">
             Three distinct stays, each designed with quiet luxury, warm textures,
-            and an easy sense of retreat in the Catskills.
+            and a sense of retreat in Upsate New York.
           </p>
         </div>
 

@@ -8,15 +8,15 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
-// 2. Initialize Cardo (requires a weight specification)
+// 2. Initialize Cardo (The elegant serif)
 const cardo = Cardo({
   weight: ["400", "700"],
-  style: ["normal", "italic"], // <-- This is the magic fix!
+  style: ["normal", "italic"], 
   subsets: ["latin"],
   variable: "--font-cardo",
 });
 
-// 3. Initialize Gloock (requires a weight specification)
+// 3. Initialize Gloock (The massive display font)
 const gloock = Gloock({
   weight: "400",
   subsets: ["latin"],
@@ -24,7 +24,7 @@ const gloock = Gloock({
 });
 
 export const metadata: Metadata = {
-  title: "Tom's Rentals | The Woodhouse Lodge",
+  title: "Tom's Rentals",
   description: "A cozy and peaceful getaway in the Catskills.",
 };
 
@@ -33,10 +33,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // THE FIX: The variables are safely injected into the <html> tag
   return (
-    <html lang="en">
-      {/* THE FIX: We are injecting all 3 font variables directly into the HTML body */}
-      <body className={`${dmSans.variable} ${cardo.variable} ${gloock.variable} antialiased`}>
+    <html lang="en" className={`${dmSans.variable} ${cardo.variable} ${gloock.variable}`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>
