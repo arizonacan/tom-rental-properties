@@ -47,7 +47,7 @@ export default function Home() {
                 className="max-w-sm font-sans text-base md:text-lg text-woodhouse-cream/90 leading-relaxed text-left opacity-0 animate-fade-up"
                 style={{ animationDelay: "200ms" }}
               >
-                Contemporary yet mid-century design, with high-quality features and a laid-back feel. Located in the heart of the Catskills.
+                Contemporary yet mid-century design, with high-quality features and a laid-back feel. Located in the heart of the Upstate New York.
               </p>
             </div>
 
