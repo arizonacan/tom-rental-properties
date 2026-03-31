@@ -33,7 +33,8 @@ export default function Home() {
             
             {/* Left Column: The Headline */}
             <div className="flex-1 text-left">
-              <h1 className="font-display text-5xl md:text-7xl lg:text-[6vw] leading-[1.1] text-woodhouse-cream uppercase tracking-wide">
+              {/* Added opacity-0 and animate-fade-up here! */}
+              <h1 className="font-display text-5xl md:text-7xl lg:text-[6vw] leading-[1.1] text-woodhouse-cream uppercase tracking-wide opacity-0 animate-fade-up">
                 A Cozy & <br className="hidden md:block"/>
                 <span className="italic text-woodhouse-olive">Peaceful</span> <br/> Getaway
               </h1>
@@ -41,8 +42,12 @@ export default function Home() {
 
             {/* Right Column: The Paragraph */}
             <div className="flex-1 flex justify-start md:justify-end">
-              <p className="max-w-sm font-sans text-base md:text-lg text-woodhouse-cream/90 leading-relaxed text-left">
-                Nestled in the heart of Upstate New York, Tom's Rentals offers a collection of three distinct properties, each designed to provide a quiet luxury experience.
+              {/* Added the animation classes AND the 200ms delay inline style! */}
+              <p 
+                className="max-w-sm font-sans text-base md:text-lg text-woodhouse-cream/90 leading-relaxed text-left opacity-0 animate-fade-up"
+                style={{ animationDelay: "200ms" }}
+              >
+                Contemporary yet mid-century design, with high-quality features and a laid-back feel. Located in the heart of the Catskills.
               </p>
             </div>
 

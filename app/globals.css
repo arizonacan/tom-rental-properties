@@ -13,9 +13,23 @@
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cardo), ui-serif, Georgia, serif;
   --font-display: var(--font-gloock), ui-serif, Georgia, serif;
+
+  /* 3. THE EDITORIAL REVEAL ANIMATION */
+  --animate-fade-up: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-/* 3. SETTING THE DEFAULT FOUNDATION */
+/* SETTING THE DEFAULT FOUNDATION */
 @layer base {
   body {
     background-color: var(--color-woodhouse-cream);
