@@ -1,23 +1,23 @@
 const properties = [
   {
-    name: "The A-Frame",
+    name: "The Historic Jesse Buel House",
     price: "$250 / night",
-    specs: "2 Bed / 1 Bath",
-    label: "Forest Retreat",
+    specs: "4 Bed / 3.5 Bath",
+    label: "The epicenter of Upstate!",
     palette: "from-woodhouse-forest via-woodhouse-rustic/70 to-woodhouse-olive/60",
   },
   {
-    name: "The Creek House",
+    name: "ABBA House Retreat",
     price: "$325 / night",
-    specs: "3 Bed / 2 Bath",
-    label: "Waterside Stay",
+    specs: "10 Bed / 4 Bath",
+    label: "Centrally Located Grand Manor",
     palette: "from-woodhouse-beige via-woodhouse-olive/70 to-woodhouse-forest",
   },
   {
-    name: "The Ridge Cabin",
+    name: "Moonrise Rest",
     price: "$295 / night",
     specs: "2 Bed / 2 Bath",
-    label: "Hilltop Escape",
+    label: "A Historic Mohawk Valley Retreat",
     palette: "from-woodhouse-rustic via-woodhouse-charcoal to-woodhouse-forest",
   },
 ];
