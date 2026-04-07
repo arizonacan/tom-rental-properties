@@ -1,4 +1,8 @@
+"use client"; // 🚨 REQUIRED: We are adding Framer Motion physics to this component!
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 const properties = [
   {
     name: "The Historic Jesse Buel House",
@@ -23,11 +27,22 @@ const properties = [
   },
 ];
 
+// 🚨 THE LUXURY CURVE: The exact same smooth easing we used on the homepage!
+const luxuryEasing = [0.16, 1, 0.3, 1];
+
 export function PropertyGrid() {
   return (
     <section className="bg-woodhouse-cream py-32">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-16 px-6 md:px-10">
-        <div className="max-w-2xl">
+        
+        {/* 🚨 HEADER ANIMATION: Fades and slides up when you scroll to it */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.2, ease: luxuryEasing }}
+          className="max-w-2xl"
+        >
           <p className="mb-4 font-sans text-sm tracking-[0.35em] uppercase text-woodhouse-charcoal/55">
             Curated Escapes
           </p>
@@ -35,14 +50,26 @@ export function PropertyGrid() {
             Our Properties
           </h2>
           <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-woodhouse-charcoal/75">
-            Three distinct stays, each designed with quiet luxury, warm textures,
-            and a sense of retreat in Upsate New York.
+            Lorem ipsum dolor sit amet consectetur adipiscing elit.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          {properties.map((property) => (
-            <article key={property.name} className="flex flex-col">
+          {properties.map((property, index) => (
+            /* 🚨 CARD ANIMATION: We changed <article> to <motion.article>.
+               The magic is the `delay: index * 0.15`. This tells React:
+               Card 0: Delay 0s
+               Card 1: Delay 0.15s
+               Card 2: Delay 0.3s
+               This creates the waterfall stagger effect! */
+            <motion.article 
+              key={property.name} 
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.2, ease: luxuryEasing, delay: index * 0.15 }}
+              className="flex flex-col"
+            >
               <div className="group relative aspect-[3/4] overflow-hidden bg-woodhouse-forest">
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${property.palette} transition-transform duration-700 ease-in-out group-hover:scale-105`}
@@ -67,7 +94,7 @@ export function PropertyGrid() {
                   <p className="mt-2">{property.specs}</p>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
