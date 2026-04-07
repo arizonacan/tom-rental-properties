@@ -27,7 +27,7 @@ const properties = [
 ];
 
 // 🚨 THE LUXURY CURVE: The exact same smooth easing we used on the homepage!
-const luxuryEasing = [0.16, 1, 0.3, 1];
+const luxuryEasing: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function PropertyGrid() {
   return (

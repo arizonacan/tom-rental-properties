@@ -23,7 +23,7 @@ const lenisOptions = {
 
 // 🚨 CUSTOM EASING CURVE: This is the secret to the "Expensive Apple/Agency" feel. 
 // It starts fast and incredibly slowly glides to a stop.
-const luxuryEasing = [0.16, 1, 0.3, 1];
+const luxuryEasing: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 function SiteNavigation() {
   const lenis = useLenis();
@@ -111,7 +111,7 @@ function HeroFrame() {
             src="/hero-cabin-exterior.jpg"
             alt="Exterior view of Tom's Rentals framed by pines in Upstate New York"
             fill
-            preload
+            priority
             sizes="100vw"
             className="object-cover object-center"
           />
