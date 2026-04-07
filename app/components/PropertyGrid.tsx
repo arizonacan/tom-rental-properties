@@ -1,6 +1,5 @@
 "use client"; // 🚨 REQUIRED: We are adding Framer Motion physics to this component!
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const properties = [
