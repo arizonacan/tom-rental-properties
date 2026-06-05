@@ -36,7 +36,7 @@ const propertiesData = {
   },
   "abba-house": {
     name: "ABBA House Retreat",
-    price: "$1,000 / night",
+    price: "Avg $1,000 / night",
     description: "Welcome to Abba House – A Historic Retreat for Groups & Getaways Step into Abba House, a beloved former retreat that has been a sanctuary for New York’s capital region for decades. This spacious, character-filled home comfortably sleeps up to 16 guests, making it perfect for family reunions, group getaways, or peaceful retreats. Spread out and unwind across five casual living rooms, each designed for conversation, connection, or cozy relaxation. Sip your morning brew from the fully stocked coffee bar and enjoy your favorite book or a glass of wine on one of the two enclosed porches, both offering ample seating and a serene view of the surrounding nature. Abba House combines rustic charm with modern comforts, creating an inviting space where you can relax, recharge, and make lasting memories. With a rich history of welcoming guests seeking escape and tranquility, this retreat is ready to be part of your story. Come experience the calm and charm that thousands before you have loved.",
     specs: "16+ guests • 9 bedrooms • 10 beds • 4 baths",
     locationDesc: "Centrally Located: The area's popular destinations are just minutes away.",
@@ -46,6 +46,7 @@ const propertiesData = {
       { name: "Forest Views", icon: <Trees className="w-5 h-5" /> },
       { name: "Outdoor Firepit", icon: <Flame className="w-5 h-5" /> },
     ],
+    extendedAmenities: []
     images: ["/interior-fireplace.jpg", "/hero-cabin-exterior.jpg", "/cabin-door.jpg"]
   },
   "moonrise-rest": {
