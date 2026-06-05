@@ -47,6 +47,7 @@ const propertiesData = {
       { name: "Outdoor Firepit", icon: <Flame className="w-5 h-5" /> },
     ],
     extendedAmenities: []
+    ,
     images: ["/interior-fireplace.jpg", "/hero-cabin-exterior.jpg", "/cabin-door.jpg"]
   },
   "moonrise-rest": {
