@@ -1,6 +1,7 @@
 "use client"; // 🚨 REQUIRED: We are adding Framer Motion physics to this component!
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const properties = [
   {
@@ -9,6 +10,7 @@ const properties = [
     specs: "4 Bed / 3.5 Bath",
     label: "The epicenter of Upstate",
     palette: "from-woodhouse-forest via-woodhouse-rustic/70 to-woodhouse-olive/60",
+    slug: "jesse-buel-house"
   },
   {
     name: "ABBA House Retreat",
@@ -16,6 +18,7 @@ const properties = [
     specs: "10 Bed / 4 Bath",
     label: "Centrally Located Grand Manor",
     palette: "from-woodhouse-beige via-woodhouse-olive/70 to-woodhouse-forest",
+    slug: "abba-house"
   },
   {
     name: "Moonrise Rest",
@@ -23,6 +26,7 @@ const properties = [
     specs: "2 Bed / 2 Bath",
     label: "Historic Mohawk Valley Retreat",
     palette: "from-woodhouse-rustic via-woodhouse-charcoal to-woodhouse-forest",
+    slug: "moonrise-rest"
   },
 ];
 
@@ -61,13 +65,14 @@ export function PropertyGrid() {
                Card 1: Delay 0.15s
                Card 2: Delay 0.3s
                This creates the waterfall stagger effect! */
+          <Link key={property.name} href={`/properties/${property.slug}`}>
             <motion.article 
               key={property.name} 
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 1.2, ease: luxuryEasing, delay: index * 0.15 }}
-              className="flex flex-col"
+              className="flex flex-col cursor-pointer"
             >
               <div className="group relative aspect-[3/4] overflow-hidden bg-woodhouse-forest">
                 <div
@@ -94,6 +99,7 @@ export function PropertyGrid() {
                 </div>
               </div>
             </motion.article>
+            </Link>
           ))}
         </div>
       </div>

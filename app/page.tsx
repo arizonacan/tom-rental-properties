@@ -32,7 +32,7 @@ function SiteNavigation() {
     if (lenis) {
       lenis.scrollTo("#properties", {
         duration: 1.35,
-        offset: -32,
+        offset: 60,
       });
       return;
     }
@@ -51,7 +51,7 @@ function SiteNavigation() {
         transition={{ duration: 1.2, ease: luxuryEasing, delay: 0.2 }}
         className="flex items-center justify-between px-5 py-5 md:px-10 md:py-7 lg:px-14"
       >
-        <p className="pointer-events-auto font-serif text-[0.72rem] uppercase tracking-[0.42em] text-[#faf9eb] mix-blend-difference">
+        <p className="pointer-events-auto font-serif text-[0.82rem] uppercase tracking-[0.42em] text-[#faf9eb] mix-blend-difference">
           Tom&apos;s Rentals
         </p>
 
@@ -60,7 +60,7 @@ function SiteNavigation() {
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleBookClick}
-          className="pointer-events-auto rounded-full bg-[#faf9eb] px-5 py-3 font-sans text-[0.62rem] font-medium uppercase tracking-[0.2em] text-[#141414] ring-1 ring-[#141414]/10 shadow-[0_16px_50px_rgba(0,0,0,0.16)] transition-transform"
+          className="pointer-events-auto rounded-full bg-[#faf9eb] px-5 py-3 font-sans text-[0.72rem] font-medium uppercase tracking-[0.2em] text-[#141414] ring-1 ring-[#141414]/10 shadow-[0_16px_50px_rgba(0,0,0,0.16)] transition-transform"
         >
           Book a Stay
         </motion.button>
