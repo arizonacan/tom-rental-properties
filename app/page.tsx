@@ -146,8 +146,7 @@ function HeroFrame() {
             </div>
 
             <p className="max-w-md font-serif text-lg leading-relaxed text-[#faf9eb]/86 md:text-[1.35rem] md:leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-              Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+              Discover the soul of Upstate New York. From historic farmhouses to serene forest retreats, our homes are curated to provide the perfect escape from the everyday 
             </p>
           </motion.div>
         </motion.div>
@@ -161,22 +160,49 @@ function IntroSection() {
     <section className="relative z-10 bg-[#faf9eb] shadow-[0_-30px_80px_rgba(0,0,0,0.28)]">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-14 px-6 pt-20 pb-8 md:px-10 md:pt-28 md:pb-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center lg:gap-20 lg:px-14 lg:pt-36 lg:pb-12">
         
-        {/* 🚨 SCROLL ANIMATION: The image gracefully slides up when you scroll down to it */}
-        <motion.div 
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.2, ease: luxuryEasing }}
-          className="relative aspect-[4/5] min-h-[28rem] overflow-hidden bg-[#d8d1bc] md:min-h-[42rem]"
-        >
-          <Image
-            src="/interior-fireplace.jpg"
-            alt="Warm fireplace corner with layered textures inside Tom's Rentals"
-            fill
-            sizes="(max-width: 1024px) 100vw, 44vw"
-            className="object-cover object-center"
-          />
-        </motion.div>
+        {/* 🚨 WRAPPER: We add a relative wrapper to anchor the floating book */}
+        <div className="relative">
+          
+          {/* 📖 THE FLOATING BOOK ILLUSTRATION */}
+          <motion.div
+            initial={{ opacity: 0, y: 30, rotate: -5 }}
+            whileInView={{ opacity: 1, y: 0, rotate: -15 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.2, ease: luxuryEasing, delay: 0.3 }}
+            className="pointer-events-none absolute -left-10 -top-12 z-20 h-32 w-32 md:-left-24 md:-top-16 md:h-48 md:w-48 xl:-left-32 xl:w-56 xl:h-56"
+          >
+            {/* The Infinite "Breathing" Float */}
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative h-full w-full"
+            >
+              <Image
+                src="/book drawing.png"
+                alt="Hand-drawn book illustration"
+                fill
+                className="object-contain opacity-85 drop-shadow-xl"
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* 🚨 SCROLL ANIMATION: Tom's Picture */}
+          <motion.div 
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: luxuryEasing }}
+            className="relative aspect-[4/5] min-h-[28rem] overflow-hidden bg-[#d8d1bc] md:min-h-[42rem]"
+          >
+            <Image
+              src="/thomasvacanti.jpg"
+              alt="Thomas Vacanti, the owner of Tom's Rentals"
+              fill
+              sizes="(max-width: 1024px) 100vw, 44vw"
+              className="object-cover object-center"
+            />
+          </motion.div>
+        </div>
 
         {/* 🚨 SCROLL ANIMATION: The text follows slightly after the image (delay: 0.2) */}
         <motion.div 
@@ -187,33 +213,29 @@ function IntroSection() {
           className="max-w-2xl"
         >
           <p className="font-sans text-[0.72rem] uppercase tracking-[0.38em] text-[#ada87a]">
-            Our Story
+            My Story
           </p>
 
           <h2 className="mt-5 font-display text-[clamp(2.6rem,5vw,5.25rem)] leading-[0.98] tracking-[-0.03em] text-[#141414]">
-            Lorem ipsum dolor sit amet.
+            About Thomas &amp; His Rentals
           </h2>
 
           <p className="mt-8 font-serif text-xl leading-relaxed text-[#141414]/80">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-            Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-            In id cursus mi pretium tellus duis convallis. 
-            Tempus leo eu aenean sed diam urna tempor. 
-            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
+            Hosting has transformed every part of my life for the better. What began as a small side hustle has grown into a cornerstone of my own American Dream. 
           </p>
 
           <p className="mt-6 font-serif text-xl leading-relaxed text-[#141414]/80">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-            Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-            In id cursus mi pretium tellus duis convallis. 
-            Tempus leo eu aenean sed diam urna tempor. 
-            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
+            As a high school teacher, I’ve always cherished shaping the future, but hosting allows me to fully embrace and enhance my present. It’s become a creative outlet, enabling me to express my passion for art and design by curating unique, welcoming spaces for my guests. I hope to see you soon! 
+          </p>
+
+          <p className="mt-6 font-serif text-xl leading-relaxed text-[#141414]/80">
+            — Thomas Vacanti
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-4 border-t border-[#141414]/12 pt-6 font-sans text-[0.72rem] uppercase tracking-[0.28em] text-[#141414]/58 md:grid-cols-3">
-            <p>Upstate New York</p>
-            <p>Mid-Century Warmth</p>
-            <p>Private Boutique Escape</p>
+            <p>5 Years Hosting</p>
+            <p>1,452 Reviews</p>
+            <p>4.92 Rating</p>
           </div>
         </motion.div>
       </div>

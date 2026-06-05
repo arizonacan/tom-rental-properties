@@ -1,30 +1,46 @@
 // app/properties/[slug]/page.tsx
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Wifi, Flame, Coffee, Trees, MapPin, Star } from "lucide-react"; // 🚨 NEW: Premium Icons
+import { Wifi, Flame, Coffee, Trees, MapPin, Star, Bath, Droplets } from "lucide-react";
 import { BookingWidget } from "../../components/BookingWidget";
+import { AmenitiesDisplay } from "../../components/AmenitiesDisplay";
 
 // 1. THE EXPANDED DATABASE (MOCK)
 const propertiesData = {
   "jesse-buel-house": {
     name: "The Historic Jesse Buel House",
-    price: "$250 / night",
-    description: "The epicenter of Upstate. A historic retreat with modern luxury. Carefully curated mid-century furniture meets 19th-century architecture.",
-    specs: "4 Bed / 3.5 Bath",
-    locationDesc: "Located in the heart of the historic district, walking distance to local cafes and antique shops.",
+    price: "$1,500 / night", // Update this if Tom changes the direct booking rate
+    description: "The epicenter of Upstate! 2.5 Hours from NYC. 35 minutes from Saratoga. 1 Hr from ADK Park / Gore / Berkshires. 4800ft of living space and an epic backyard make this historic home a true gem. The blueprints for the Jesse Buel House reside in the Library of Congress…for real. The pool is enormous and OPEN TIL early NOV! Hot tub open all year. There is enough furniture for everyone to get cozy. Two kitchens, a billiard room, OLED TVs and luxurious mattresses make this home truly one of a kind.",
+    specs: "12 guests • 4 bedrooms • 4 beds • 3.5 baths",
+    locationDesc: "Located in historic Center Square, Albany. A short walk to Washington Park and just steps away from Dove + Deer pub (where guests get 10% off Dinner, Lunch, or Brunch).",
+    mapQuery: "Center Square, Albany, NY", 
     amenities: [
-      { name: "High-Speed WiFi", icon: <Wifi className="w-5 h-5" /> },
-      { name: "Wood Fireplace", icon: <Flame className="w-5 h-5" /> },
-      { name: "Chef's Kitchen", icon: <Coffee className="w-5 h-5" /> },
+      { name: "Year-Round Hot Tub", icon: <Droplets className="w-5 h-5" /> },
+      { name: "Remote Gas Fireplace", icon: <Flame className="w-5 h-5" /> },
+      { name: "Deep Soaking Tub", icon: <Bath className="w-5 h-5" /> },
+      { name: "Seasonal Pool", icon: <Droplets className="w-5 h-5" /> },
     ],
-    images: ["/hero-cabin-exterior.jpg", "/interior-fireplace.jpg", "/moonrisemeadows1.jpg"]
+    extendedAmenities: [
+      "Scenic views & Pool view", "Hair dryer & Cleaning products", "Shampoo, Conditioner & Rad body soap",
+      "Outdoor shower & Hot water", "Free washer & dryer", "Towels, bed sheets, soap, and toilet paper",
+      "Cotton linens, Extra pillows and blankets", "Iron & Clothing storage", "65 inch HDTV with Amazon Prime Video",
+      "Bluetooth sound system", "Pool table", "Books, board games & Crib", "Central air conditioning & Portable fans",
+      "Radiant heating", "Noise decibel monitors & 13 exterior security cameras", "Smoke & Carbon monoxide alarms",
+      "Fire extinguisher", "Fast Wifi & Dedicated workspace", "Fully equipped kitchen with Refrigerator & Microwave",
+      "Pots, pans, oil, salt, pepper & Cooking basics", "Dishes, silverware, bowls, chopsticks", "Mini fridge & Dishwasher",
+      "Stainless steel oven", "Hot water kettle, Drip coffee maker, Blender & Coffee", "Wine glasses", 
+      "Private patio or balcony", "Private fenced backyard", "Fire pit & BBQ grill", "Outdoor furniture & Hammock",
+      "Free parking on premises", "Pets & Assistance animals allowed", "Self check-in & Smart lock"
+    ],
+    images: ["/hero-cabin-exterior.jpg", "/interior-fireplace.jpg", "/moonrisemeadows1.jpg"] // Swap these when Tom sends the actual photos
   },
   "abba-house": {
     name: "ABBA House Retreat",
-    price: "$325 / night",
-    description: "Centrally Located Grand Manor perfect for large family gatherings. Expansive dining areas and a private backyard oasis.",
-    specs: "10 Bed / 4 Bath",
-    locationDesc: "Nestled on a quiet, tree-lined street just 5 minutes from the main hiking trails.",
+    price: "$1,000 / night",
+    description: "Welcome to Abba House – A Historic Retreat for Groups & Getaways Step into Abba House, a beloved former retreat that has been a sanctuary for New York’s capital region for decades. This spacious, character-filled home comfortably sleeps up to 16 guests, making it perfect for family reunions, group getaways, or peaceful retreats. Spread out and unwind across five casual living rooms, each designed for conversation, connection, or cozy relaxation. Sip your morning brew from the fully stocked coffee bar and enjoy your favorite book or a glass of wine on one of the two enclosed porches, both offering ample seating and a serene view of the surrounding nature. Abba House combines rustic charm with modern comforts, creating an inviting space where you can relax, recharge, and make lasting memories. With a rich history of welcoming guests seeking escape and tranquility, this retreat is ready to be part of your story. Come experience the calm and charm that thousands before you have loved.",
+    specs: "16+ guests • 9 bedrooms • 10 beds • 4 baths",
+    locationDesc: "Centrally Located: The area's popular destinations are just minutes away.",
+    mapQuery: "Saratoga Springs, NY", // 🚨 ADD THIS
     amenities: [
       { name: "High-Speed WiFi", icon: <Wifi className="w-5 h-5" /> },
       { name: "Forest Views", icon: <Trees className="w-5 h-5" /> },
@@ -34,14 +50,23 @@ const propertiesData = {
   },
   "moonrise-rest": {
     name: "Moonrise Rest",
-    price: "$295 / night",
+    // 🚨 We use "From" or "Avg" to protect Tom from fluctuating holiday rates
+    price: "Avg $1,000 / night", 
     description: "Historic Mohawk Valley Retreat surrounded by pines. The perfect quiet getaway for couples looking to unplug.",
-    specs: "2 Bed / 2 Bath",
+    // 🚨 Added the 3-night minimum to the specs so it's immediately visible
+    specs: "16+ guests • 4 Bedrooms • 13 Beds • 3.5 Baths • 3-Night Minimum", 
     locationDesc: "Secluded forest location. A true off-grid feel while still being a 15-minute drive to town.",
+    mapQuery: "Mohawk Valley, NY", 
     amenities: [
       { name: "Forest Views", icon: <Trees className="w-5 h-5" /> },
       { name: "Coffee Station", icon: <Coffee className="w-5 h-5" /> },
       { name: "Wood Fireplace", icon: <Flame className="w-5 h-5" /> },
+      { name: "High-Speed WiFi", icon: <Wifi className="w-5 h-5" /> },
+    ],
+    extendedAmenities: [
+      "Secluded forest location", "Outdoor fire pit", "Fully equipped kitchen",
+      "Luxury linens", "Smart TV with streaming", "Dedicated workspace",
+      "Free parking on premises", "Self check-in"
     ],
     images: ["/moonrisemeadows1.jpg", "/cabin-door.jpg", "/interior-fireplace.jpg"]
   }
@@ -94,29 +119,31 @@ export default async function PropertyPage({
               {property.description}
             </p>
 
-            {/* 🚨 NEW: AMENITIES GRID */}
-            <div className="border-t border-black/10 pt-12 mb-16">
-              <h3 className="font-sans text-xs tracking-widest uppercase mb-8 text-black/50">What this place offers</h3>
-              <div className="grid grid-cols-2 gap-y-6 gap-x-4">
-                {property.amenities.map((amenity, i) => (
-                  <div key={i} className="flex items-center gap-4 font-serif text-lg text-black/80">
-                    <span className="text-[#ada87a]">{amenity.icon}</span>
-                    {amenity.name}
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* 🚨 THE INTERACTIVE AMENITIES COMPONENT */}
+            <AmenitiesDisplay 
+              mainAmenities={property.amenities} 
+              allAmenities={property.extendedAmenities || []} 
+            />
 
-            {/* 🚨 NEW: LOCATION BLOCK */}
+            {/* 🚨 UPDATED: LOCATION BLOCK WITH LIVE MAP */}
             <div className="border-t border-black/10 pt-12 mb-16">
               <h3 className="font-sans text-xs tracking-widest uppercase mb-8 text-black/50">Location</h3>
               <div className="flex items-start gap-4 mb-6">
                 <MapPin className="w-6 h-6 text-[#ada87a] shrink-0 mt-1" />
                 <p className="font-serif text-lg leading-relaxed text-black/80">{property.locationDesc}</p>
               </div>
-              {/* Map Placeholder */}
-              <div className="w-full h-64 bg-[#e8e6d9] flex items-center justify-center text-black/30 font-sans text-sm tracking-widest uppercase">
-                [ Mapbox / Google Maps Integration ]
+              
+              {/* LIVE GOOGLE MAP EMBED */}
+              <div className="w-full h-72 bg-[#e8e6d9] overflow-hidden grayscale contrast-125 opacity-50 transition-all duration-500 hover:grayscale-0 hover:opacity-100">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(property.mapQuery)}&output=embed`}
+                />
               </div>
             </div>
 
