@@ -266,6 +266,16 @@ const propertiesData = {
   }
 };
 
+// 🚨 THE FIX: This tells Vercel that images and descriptions are "Optional" (the ? mark)
+type AccommodationType = {
+  id: string;
+  title: string;
+  specs: string;
+  price: string;
+  description?: string;
+  images?: { src: string; label: string }[];
+};
+
 export default async function PropertyPage({
   params,
   searchParams, // 🚨 Added to read the URL
@@ -284,8 +294,8 @@ export default async function PropertyPage({
 
   // 🚨 Find the exact room the user clicked, or default to the first one
   const selectedRoomId = room || property.accommodations[0]?.id;
-  const activeAccommodation = property.accommodations.find(a => a.id === selectedRoomId) || property.accommodations[0];
-
+  const activeAccommodation = (property.accommodations.find(a => a.id === selectedRoomId) || property.accommodations[0]) as AccommodationType;
+  
   return (
     <main className="relative min-h-screen bg-[#faf9eb] text-[#141414]">
       
