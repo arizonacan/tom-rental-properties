@@ -8,7 +8,7 @@ const properties = [
   {
     name: "The Historic Jesse Buel House",
     price: "Avg $1,500 / night",
-    specs: "4 Bed / 3.5 Bath",
+    specs: "4 Bedrooms • 4 Beds • 3.5 Baths",
     label: "The epicenter of Upstate",
     image: "/jesse-buel-exterior-1.webp", 
     slug: "jesse-buel-house"
@@ -16,7 +16,7 @@ const properties = [
   {
     name: "ABBA House Retreat",
     price: "Avg $1,000 / night",
-    specs: "10 Bed / 4 Bath",
+    specs: "9 Bedrooms • 10 Beds • 4 Baths",
     label: "Centrally Located Grand Manor",
     image: "/ABBA-exterior-1.avif",
     slug: "abba-house"
@@ -24,7 +24,7 @@ const properties = [
   {
     name: "Moonrise Rest",
     price: "Avg $1,000 / night",
-    specs: "2 Bed / 2 Bath",
+    specs: "4 Bedrooms • 13 Beds • 3.5 Baths",
     label: "Historic Mohawk Valley Retreat",
     image: "/moonrisemeadows1.jpg",
     slug: "moonrise-rest"
