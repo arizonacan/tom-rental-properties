@@ -9,68 +9,92 @@ import { AmenitiesDisplay } from "../../components/AmenitiesDisplay";
 const propertiesData = {
   "jesse-buel-house": {
     name: "The Historic Jesse Buel House",
-    price: "$1,500 / night", // Update this if Tom changes the direct booking rate
-    description: "The epicenter of Upstate! 2.5 Hours from NYC. 35 minutes from Saratoga. 1 Hr from ADK Park / Gore / Berkshires. 4800ft of living space and an epic backyard make this historic home a true gem. The blueprints for the Jesse Buel House reside in the Library of Congress…for real. The pool is enormous and OPEN TIL early NOV! Hot tub open all year. There is enough furniture for everyone to get cozy. Two kitchens, a billiard room, OLED TVs and luxurious mattresses make this home truly one of a kind.",
-    specs: "12 guests • 4 bedrooms • 4 beds • 3.5 baths",
-    locationDesc: "Located in historic Center Square, Albany. A short walk to Washington Park and just steps away from Dove + Deer pub (where guests get 10% off Dinner, Lunch, or Brunch).",
+    price: "From $150 / night", 
+    description: "This is Albany's best! Enjoy a cozy stay in one of Albany's oldest and most unique homes. Rent the entire historic farmhouse, an adjacent townhouse, or a private suite.",
+    specs: "Estate, Townhouses & Private Suites",
+    locationDesc: "Located in historic Center Square, Albany. A short walk to Washington Park and just steps away from Dove + Deer pub.",
     mapQuery: "Center Square, Albany, NY", 
     amenities: [
       { name: "Year-Round Hot Tub", icon: <Droplets className="w-5 h-5" /> },
       { name: "Remote Gas Fireplace", icon: <Flame className="w-5 h-5" /> },
       { name: "Deep Soaking Tub", icon: <Bath className="w-5 h-5" /> },
-      { name: "Seasonal Pool", icon: <Droplets className="w-5 h-5" /> },
+      { name: "High-Speed WiFi", icon: <Wifi className="w-5 h-5" /> },
     ],
-    extendedAmenities: [
-      "Scenic views & Pool view", "Hair dryer & Cleaning products", "Shampoo, Conditioner & Rad body soap",
-      "Outdoor shower & Hot water", "Free washer & dryer", "Towels, bed sheets, soap, and toilet paper",
-      "Cotton linens, Extra pillows and blankets", "Iron & Clothing storage", "65 inch HDTV with Amazon Prime Video",
-      "Bluetooth sound system", "Pool table", "Books, board games & Crib", "Central air conditioning & Portable fans",
-      "Radiant heating", "Noise decibel monitors & 13 exterior security cameras", "Smoke & Carbon monoxide alarms",
-      "Fire extinguisher", "Fast Wifi & Dedicated workspace", "Fully equipped kitchen with Refrigerator & Microwave",
-      "Pots, pans, oil, salt, pepper & Cooking basics", "Dishes, silverware, bowls, chopsticks", "Mini fridge & Dishwasher",
-      "Stainless steel oven", "Hot water kettle, Drip coffee maker, Blender & Coffee", "Wine glasses", 
-      "Private patio or balcony", "Private fenced backyard", "Fire pit & BBQ grill", "Outdoor furniture & Hammock",
-      "Free parking on premises", "Pets & Assistance animals allowed", "Self check-in & Smart lock"
-    ],
-    images: ["/hero-cabin-exterior.jpg", "/interior-fireplace.jpg", "/moonrisemeadows1.jpg"] // Swap these when Tom sends the actual photos
+    extendedAmenities: [], // Keep your massive list here
+    images: ["/hero-cabin-exterior.jpg", "/interior-fireplace.jpg", "/moonrisemeadows1.jpg"],
+    
+    // 🚨 THE EXTRACTED 9 LISTINGS
+    accommodations: [
+      { 
+        id: "jb-entire", 
+        title: "Historic Jesse Buel Farmhouse", 
+        specs: "Entire Estate • Sleeps 16+", 
+        price: "Select Dates",
+        description: "Rent the entire historic estate for large family gatherings or corporate retreats. Enjoy exclusive access to the grounds, year-round hot tub, and seasonal pool."
+      },
+      { 
+        id: "jb-jesses-suite", 
+        title: "Jesse's Suite", 
+        specs: "2 Beds • 1 Private Bath • Master Suite", 
+        price: "Select Dates",
+        description: "This is Albany’s best! Enjoy a cozy stay in our 1821 master suite complete with a deep soaking tub, remote controlled gas fireplace, king size bed, pull out American Leather couch, and double sinks."
+      },
+      { 
+        id: "jb-loft-suite", 
+        title: "The Loft Suite", 
+        specs: "1 King Bed • 1 Private Bath • 800 sqft", 
+        price: "Select Dates",
+        description: "Rustic style master suite in the heart of Albany. Enjoy a Purple hybrid 4 luxury mattress, Dune couch, and original architecture. Access to outdoor patio, pool, and hot tub included."
+      },
+    ]
   },
+
   "abba-house": {
     name: "ABBA House Retreat",
-    price: "Avg $1,000 / night",
-    description: "Welcome to Abba House – A Historic Retreat for Groups & Getaways Step into Abba House, a beloved former retreat that has been a sanctuary for New York’s capital region for decades. This spacious, character-filled home comfortably sleeps up to 16 guests, making it perfect for family reunions, group getaways, or peaceful retreats. Spread out and unwind across five casual living rooms, each designed for conversation, connection, or cozy relaxation. Sip your morning brew from the fully stocked coffee bar and enjoy your favorite book or a glass of wine on one of the two enclosed porches, both offering ample seating and a serene view of the surrounding nature. Abba House combines rustic charm with modern comforts, creating an inviting space where you can relax, recharge, and make lasting memories. With a rich history of welcoming guests seeking escape and tranquility, this retreat is ready to be part of your story. Come experience the calm and charm that thousands before you have loved.",
-    specs: "16+ guests • 9 bedrooms • 10 beds • 4 baths",
-    locationDesc: "Centrally Located: The area's popular destinations are just minutes away.",
-    mapQuery: "Saratoga Springs, NY", // 🚨 ADD THIS
+    price: "From $120 / night",
+    description: "Centrally Located Grand Manor perfect for large family gatherings. Rent the entire estate, or choose one of our private luxury suites.",
+    specs: "Estate & Private Suites Available",
+    locationDesc: "Nestled on a quiet, tree-lined street just 5 minutes from the main hiking trails.",
+    mapQuery: "Saratoga Springs, NY",
     amenities: [
       { name: "High-Speed WiFi", icon: <Wifi className="w-5 h-5" /> },
       { name: "Forest Views", icon: <Trees className="w-5 h-5" /> },
       { name: "Outdoor Firepit", icon: <Flame className="w-5 h-5" /> },
     ],
-    extendedAmenities: []
-    ,
-    images: ["/interior-fireplace.jpg", "/hero-cabin-exterior.jpg", "/cabin-door.jpg"]
+    extendedAmenities: [], 
+    images: ["/interior-fireplace.jpg", "/hero-cabin-exterior.jpg", "/cabin-door.jpg"],
+    
+    // 🚨 THE EXTRACTED 6 LISTINGS
+    accommodations: [
+      { id: "abba-entire", title: "The Historic ABBA House | Grand Mansion", specs: "Entire Villa • 10 Beds", price: "Select Dates" },
+      { id: "abba-room-5", title: "Large Room with King Bed #5", specs: "Private Room", price: "Select Dates" },
+      { id: "abba-room-4", title: "Queen Bed #4 in Historic ABBA House", specs: "Private Room", price: "Select Dates" },
+      { id: "abba-room-3", title: "Queen Canopy Bed #3", specs: "Private Room", price: "Select Dates" },
+      { id: "abba-room-std", title: "Standard Full Bed", specs: "Private Room • 2 Beds", price: "Select Dates" },
+      { id: "abba-room-gen", title: "Room at the Grand Historic ABBA House", specs: "Private Room", price: "Select Dates" }
+    ]
   },
+
   "moonrise-rest": {
     name: "Moonrise Rest",
-    // 🚨 We use "From" or "Avg" to protect Tom from fluctuating holiday rates
     price: "Avg $1,000 / night", 
     description: "Historic Mohawk Valley Retreat surrounded by pines. The perfect quiet getaway for couples looking to unplug.",
-    // 🚨 Added the 3-night minimum to the specs so it's immediately visible
-    specs: "16+ guests • 4 Bedrooms • 13 Beds • 3.5 Baths • 3-Night Minimum", 
+    specs: "2 Bed / 2 Bath • 3-Night Minimum", 
     locationDesc: "Secluded forest location. A true off-grid feel while still being a 15-minute drive to town.",
-    mapQuery: "Mohawk Valley, NY", 
+    mapQuery: "Palatine Bridge, NY", 
     amenities: [
       { name: "Forest Views", icon: <Trees className="w-5 h-5" /> },
       { name: "Coffee Station", icon: <Coffee className="w-5 h-5" /> },
       { name: "Wood Fireplace", icon: <Flame className="w-5 h-5" /> },
       { name: "High-Speed WiFi", icon: <Wifi className="w-5 h-5" /> },
     ],
-    extendedAmenities: [
-      "Secluded forest location", "Outdoor fire pit", "Fully equipped kitchen",
-      "Luxury linens", "Smart TV with streaming", "Dedicated workspace",
-      "Free parking on premises", "Self check-in"
-    ],
-    images: ["/moonrisemeadows1.jpg", "/cabin-door.jpg", "/interior-fireplace.jpg"]
+    extendedAmenities: [],
+    images: ["/moonrisemeadows1.jpg", "/cabin-door.jpg", "/interior-fireplace.jpg"],
+    
+    // 🚨 THE 1 EXTRACTED LISTING
+    accommodations: [
+      { id: "moonrise-entire", title: "The Moonrise Rest - Quiet Mohawk Valley Retreat", specs: "Entire Home", price: "Select Dates" }
+    ]
   }
 };
 
@@ -167,17 +191,9 @@ export default async function PropertyPage({
           </div>
 
           {/* RIGHT COLUMN: The Sticky Booking Engine */}
+          {/* RIGHT COLUMN: The Interactive Booking Engine */}
           <div className="relative">
-            <div className="sticky top-24 bg-white border border-[#141414]/10 p-8 shadow-xl">
-              <h3 className="font-display text-3xl mb-2">{property.price}</h3>
-              <p className="font-sans text-xs uppercase tracking-widest text-black/50 mb-8">
-                Direct Booking
-              </p>
-              
-              <div className="mb-6">
-                <BookingWidget propertyName={property.name} />
-              </div>
-            </div>
+            <BookingWidget options={property.accommodations} />
           </div>
 
         </div>
