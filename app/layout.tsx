@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Cardo, Gloock } from "next/font/google";
 import "./globals.css";
+import { Footer } from "./components/Footer";
 
 // 1. Initialize DM Sans for UI
 const dmSans = DM_Sans({
@@ -38,6 +39,8 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${cardo.variable} ${gloock.variable}`}>
       <body className="antialiased">
         {children}
+        {/* 🚨 THE ONLY CHANGE: The Footer goes right here */}
+        <Footer />
       </body>
     </html>
   );
